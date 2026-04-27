@@ -1,47 +1,54 @@
-.cards-grid {
+.country-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.back-btn {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.country-page__layout {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
 }
 
-.card {
-  display: block;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-decoration: none;
-  color: inherit;
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.card__flag {
+.country-page__flag {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  border-radius: 8px;
 }
 
-.card__body {
-  padding: 1rem;
-}
-
-.card__name {
+.country-page__name {
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 0.5rem;
 }
 
-.home__status {
-  text-align: center;
-  padding: 2rem;
-  color: #666;
+.country-page__official {
+  color: gray;
 }
 
-.home__status--error {
+.country-page__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+}
+
+.border-badge {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.page-status {
+  padding: 20px;
+}
+
+.page-status--error {
   color: red;
 }
