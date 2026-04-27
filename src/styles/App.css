@@ -1,0 +1,54 @@
+.country-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.back-btn {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.country-page__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.country-page__flag {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.country-page__name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.country-page__official {
+  color: gray;
+}
+
+.country-page__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+}
+
+.border-badge {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.page-status {
+  padding: 20px;
+}
+
+.page-status--error {
+  color: red;
+}
