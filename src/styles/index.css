@@ -119,3 +119,25 @@ h1, h2 {
   background-color: var(--card-bg);
   color: var(--text);
 }
+
+.card__name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.header__nav {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}

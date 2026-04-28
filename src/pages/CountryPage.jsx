@@ -9,7 +9,7 @@ function CountryPage() {
   const { country, loading, error } = useCountry(code);
 
   if (loading) return <p className="page-status">Loading...</p>;
-  if (error) return <p className="page-status page-status--error">{error}</p>;
+  if (error) return <p className="page-status page-status--error">Country not found</p>;
   if (!country) return null;
 
   const {
@@ -38,7 +38,7 @@ function CountryPage() {
       <div className="country-page__layout">
         <img
           src={flags?.svg}
-          alt={name?.common}
+          alt={`Flag of ${name?.common}`}
           className="country-page__flag"
         />
 
@@ -50,13 +50,13 @@ function CountryPage() {
             <div>
               <p><strong>Population:</strong> {population?.toLocaleString()}</p>
               <p><strong>Region:</strong> {region}</p>
-              <p><strong>Subregion:</strong> {subregion}</p>
-              <p><strong>Capital:</strong> {capital?.[0]}</p>
+              <p><strong>Subregion:</strong> {subregion ?? "N/A"}</p>
+              <p><strong>Capital:</strong> {capital?.[0] ?? "N/A"}</p>
             </div>
 
             <div>
-              <p><strong>Languages:</strong> {languageList.join(", ")}</p>
-              <p><strong>Currencies:</strong> {currencyList.join(", ")}</p>
+              <p><strong>Languages:</strong> {languageList.length ? languageList.join(", ") : "N/A"}</p>
+              <p><strong>Currencies:</strong> {currencyList.length ? currencyList.join(", ") : "N/A"}</p>
             </div>
           </div>
 

@@ -5,17 +5,15 @@ import FilterBar from "../components/FilterBar";
 
 function Home() {
   const [query, setQuery] = useState("");
-
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // ✅ NEW
   const [region, setRegion] = useState("All");
   const [sortBy, setSortBy] = useState("");
 
   useEffect(() => {
-    if (!query) {
+    if (!query.trim()) {
       setCountries([]);
       setError(null);
       return;
@@ -43,7 +41,6 @@ function Home() {
     return () => clearTimeout(timer);
   }, [query]);
 
-  // ✅ FILTER + SORT (derived state)
   const displayed = [...countries]
     .filter((c) => region === "All" || c.region === region)
     .sort((a, b) => {
@@ -60,7 +57,6 @@ function Home() {
     <div className="home">
       <SearchBar query={query} onQueryChange={setQuery} />
 
-      {/* ✅ NEW FILTER BAR */}
       <FilterBar
         region={region}
         onRegionChange={setRegion}
@@ -68,15 +64,10 @@ function Home() {
         onSortChange={setSortBy}
       />
 
-      {/* Loading */}
       {loading && <p className="home__status">Loading...</p>}
 
-      {/* Error */}
-      {error && (
-        <p className="home__status home__status--error">{error}</p>
-      )}
+      {error && <p className="home__status home__status--error">{error}</p>}
 
-      {/* Results */}
       {!loading && !error && displayed.length > 0 && (
         <div className="cards-grid">
           {displayed.map((country) => (
@@ -85,7 +76,10 @@ function Home() {
         </div>
       )}
 
-      {/* Empty */}
+      {!loading && !error && displayed.length === 0 && query.trim() && (
+        <p className="home__status">No countries found.</p>
+      )}
+
       {!loading && !error && displayed.length === 0 && !query && (
         <p className="home__status">
           Start searching to explore countries.
