@@ -1,0 +1,76 @@
+.country-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  color: var(--text);
+}
+
+.back-btn {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background-color: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+.country-page__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* FIXED */
+  gap: 20px;
+  align-items: center;
+}
+
+.country-page__flag {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.country-page__name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.country-page__official {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.country-page__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+}
+
+.border-badge {
+  display: inline-block;
+  border: 1px solid var(--border);
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--card-bg);
+  color: var(--text);
+}
+
+.page-status {
+  padding: 20px;
+}
+
+.page-status--error {
+  color: red;
+}
+
+.fav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  color: gray;
+}
+
+.fav-btn--saved {
+  color: red;
+  font-weight: bold;
+}
